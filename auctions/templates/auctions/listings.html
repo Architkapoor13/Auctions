@@ -1,0 +1,142 @@
+{% extends "auctions/layout.html" %}
+
+{%  block body %}
+
+    <div id="listings-left">
+        <img class="listings-image" src="{{ listing.piclink}}" alt="listing image">
+    </div>
+    <div id="listings-right">
+    {% if listing.isactive == True %}
+        {% if listing.user == user %}
+            <form action="{% url 'close'%}" method="post" style="border-bottom: 1px solid #e0e0e0;">
+                {% csrf_token %}
+                <input type="hidden" value="{{ listing.id }}" name="closing">
+                <button class="btn btn-danger" type="submit">Close Auction</button>
+                <h6>*After closing the users will not be able to bid on this listing and the latest bidder will be declared as the winner.</h6>
+            </form>
+        {% endif %}
+    {% else %}
+        {% if latestbidder == user %}
+            <div class="alert alert-success" role="alert">
+                This bid is closed now, congractulations <b style="font-size: 30px">you</b> have won the bid!
+            </div>
+        {% else %}
+            <div class="alert alert-success" role="alert">
+                This bid is closed now, <b style="font-size: 25px">{{ latestbidder }}</b> has won the bid!
+            </div>
+        {% endif %}
+    {% endif %}
+        <h1>{{ listing.title }} <span style="background-color:mediumpurple; font-size:13px; color: white; border-radius: 20px; padding-right: 4px; padding-left: 4px; padding-bottom:4px;"><a href="{% url 'category' listing.category %}" id="listings-cat-links">{{ listing.category }}</a></span></h1>
+        <b style="color:grey;">Description</b>
+        <div id="listings-destiption">{{ listing.description }}</div>
+        <br>
+        <p><span style="color: yellowgreen;"><b>Current Price:</b></span> ${{ listing.currentbid }}</p>
+        <p><span style="color:#CCCC00;"><b>Original Price:</b></span> ${{ listing.startingbid }}</p>
+        {% if user.is_authenticated %}
+{#            <h6 style="font-size: 20px; color:red;">*The new bid must be greater than the current price</h6>#}
+            {% if errormessage %}
+                <div class="alert alert-danger" role="alert">
+                    {{ errormessage }}
+                </div>
+            {% endif %}
+            {% if placedmessage %}
+                <div class="alert alert-success" role="alert">
+                    {{ placedmessage }}
+                </div>
+            {% endif %}
+            {% if latestbidder == user %}
+                {% if count == 0 %}
+                    <h6>No bids so far. Bid to become the first bidder.</h6>
+                {% else %}
+                    <h6>{{ count }} bid(s) so far. <b>You</b> are the latest bidder</h6>
+                {% endif %}
+            {% else %}
+                {% if count == 0 %}
+                    <h6>No bids so far. Bid to become the first bidder.</h6>
+                {% else %}
+                    <h6>{{ count }} bid(s) so far. <b>{{ latestbidder }}</b> is the latest bidder.</h6>
+                {% endif %}
+            {% endif %}
+            {% if listing.isactive == False %}
+                {% if closingmsg %}
+                    <div class="alert alert-danger" role="alert">
+                        {{ closingmsg }}
+                    </div>
+                {% endif %}
+                <form action="{% url 'message' listing.id %}" method="post" style="padding-bottom:20px;">
+                    {% csrf_token %}
+                    <div class="form-group col-4" style="padding-left:0; margin-right: 50px;">
+                        <input type="number" name="bid" placeholder="Bid" class="form-control" style="float:left;" step="0.01">
+                    </div>
+                    <button type="submit" class="btn btn-danger"><span style="color: grey">Place Bid</span></button>
+                </form>
+            {% else %}
+                <form action="{% url 'listings' listing.id %}" method="post" style="padding-bottom:20px;">
+                    {% csrf_token %}
+                    <div class="form-group col-4" style="padding-left:0; margin-right: 50px;">
+                        <input type="number" name="bid" placeholder="Bid" class="form-control" style="float:left;" step="0.01">
+                    </div>
+                    <button type="submit" class="btn btn-success">Place Bid</button>
+                </form>
+            {% endif %}
+            {% if watchcount == 0 %}
+                <form action="{% url 'userwatchlist' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{ listing.id }}" name="watchlistid">
+                    <button class="btn btn-primary" type="submit">Add to watchlist</button>
+                </form>
+            {% else %}
+                <form action="{% url 'userwatchlist' %}" method="post">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{ listing.id }}" name="watchlistid">
+                    <button class="btn btn-danger" type="submit">Remove from Watchlist</button>
+                </form>
+            {% endif %}
+        {% else %}
+            <h5><a href="{% url 'login' %}" class="listings-links">Login</a> first to place a bid!</h5>
+        {% endif %}
+        <div>
+            <br>
+            <h3 style="border-top: 1px solid #e0e0e0; color:grey;">Details</h3>
+            <ul style="border-bottom: 1px solid #e0e0e0">
+                <li>Listed by: <span style="color:blue;">{{ listing.user }}</span></li>
+                <li>Category: <b>{{ listing.category }}</b></li>
+                <li>Listed on: {{ listing.created_on }}</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="listings3">
+        <h3 style="border-bottom: 1px solid #e0e0e0;">Comments </h3>
+        {% for n in comments %}
+            <div style="border-bottom: 1px solid #e0e0e0">
+                <span style="color:dodgerblue;">{{ n.user }}</span>: {{ n.comment }}
+                <br>
+                <span style="font-size: 10px;">{{ n.created_on }}</span>
+            </div>
+        {% empty %}
+            No comments as of now.
+        {% endfor %}
+        {% if user.is_authenticated %}
+            <form action="{% url 'comments' %}" method="post" style="padding-top:20px; padding-right: 750px;">
+                <h6>Add a comment:</h6>
+                {% csrf_token %}
+                <textarea rows="2" cols="20" name="comment" class="form-control" placeholder="Your Comments"></textarea>
+                <br>
+                <input type="hidden" name="commentlisting" value="{{ listing.id }}">
+                <button class="btn btn-primary" type="submit">Post</button>
+            </form>
+        {% else %}
+            <form action="{% url 'comments' %}" method="post" style="padding-top:20px; padding-right: 750px;">
+                <h6>Login first to make a comment <a href="{% url 'login' %}" class="listings-links">login</a> here</h6>
+                {% csrf_token %}
+                <textarea rows="2" cols="20" name="comment" class="form-control" placeholder="Your comments" readonly></textarea>
+                <br>
+                <input type="hidden" name="commentlisting" value="{{ listing.id }}">
+                <button class="btn btn-primary" type="button">Post</button>
+            </form>
+        {% endif %}
+    </div>
+
+
+{% endblock %}

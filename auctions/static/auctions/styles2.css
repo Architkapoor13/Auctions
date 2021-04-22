@@ -1,0 +1,135 @@
+body {
+    padding: 10px;
+}
+
+.index-listings
+{
+    background-color: white;
+    border-radius: 25px;
+    margin: 20px;
+    padding:20px;
+    width: 300px;
+    box-shadow: 5px 3px 5px 6px #ccc;
+}
+
+#container
+{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.index-image
+{
+    max-width: 100%;
+    max-height: 240px;
+    padding-left: 15px;
+    padding-right: 5px;
+    border-radius: 50px;
+}
+
+.index-listings-div
+{
+    padding:10px;
+    margin-top: 5px;
+    color: black;
+}
+.index-listings-div > p > a
+{
+    color: black;
+}
+
+.index-listings-div > p > a:hover
+{
+    color: blue;
+    text-decoration: none;
+}
+
+.index-listings-description
+{
+    text-align: left;
+    background-color: #e0e0e0;
+    padding:10px;
+    font-family: monospace;
+}
+
+#listings-left
+{
+    float: left;
+    width: 40%;
+    height: 600px;
+    background-color: white;
+    /*margin-right: 50px;*/
+}
+
+#listings-right
+{
+    float:left;
+    width: 50%;
+    height: 600px;
+    margin-left: 50px;
+}
+
+#listings-destiption
+{
+    background-color: #e0e0e0;
+    padding: 10px 10px 10px 10px;
+}
+
+h6
+{
+    font-size: 13px;
+}
+
+.listings-image
+{
+    width: 100%;
+    height:auto;
+    max-height: 600px;
+}
+
+.listings3
+{
+    padding-left: 50px;
+}
+
+.listings3 > div
+{
+    padding-left: 50px;
+    padding-top:20px;
+}
+
+#newlisting-form
+{
+    padding: 10px 200px 10px 200px;
+}
+
+.listings-links
+{
+    color: red;
+}
+.listings-links:hover
+{
+    color:blue;
+    text-decoration: none;
+}
+
+.categories-links
+{
+    font-size: 30px;
+    color:blue;
+}
+.categories-links:hover
+{
+    color:blue;
+    text-decoration: none;
+}
+
+#listings-cat-links
+{
+    color:white;
+}
+#listings-cat-links:hover
+{
+    color:blue;
+    text-decoration: none;
+}
