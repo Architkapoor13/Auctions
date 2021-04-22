@@ -63,7 +63,7 @@ these are the tables made inorder to create this website.
 ```Bash
 python manage.py runserver
 ```
-
+***
 #### Video
 [Auction](https://www.youtube.com/watch?v=zfJINDrpbqo)
 
