@@ -1,12 +1,16 @@
-# Auctions (An E-commerce website where the auctions happen)
+# Title: Auctions (An E-commerce website where the auctions happen)
 
-### Decription
+### Mthodology 
+![Auction-Methodology](screenshots/auctions.png)
+
+### Decription and features
 This is an E-commerce website built with **Python(Django)** as backend, **HTML**, **CSS** as Front-end and using the default sqlite database.  
 No **Javacript** was used to build this project.  
 This is an E-commerce website where you can post the things you want to sell, and you can also see/buy the things that other people have posted and can also bid on those products and the highest bidder will win the auction.  
 There are many features of this website as shown with the screenshots below.
 ***
-### Features
+
+#### Features
 
 1. Login:
 To place a new listing or to bid upon something and to use much other features you have to login onto this website.
@@ -35,8 +39,10 @@ Here those items will appear which you decided to put on the watch by clicking t
 7. My Listings:
 The items you posted appear here.
 ![My-Listings](screenshots/mylistings-page.png)
-   
-8. Opening Listing:
+ 
+#### Input/Output'
+We can place bids on the listings on the website as input and output.
+1. Opening Listing:
 If you want to place a bid or just want to open the listing just click on the make a bid button or the name of the listing, then you will be opening the listing.
 #### Without login
 ![Without-Login](screenshots/listing-without-login.png)
@@ -48,22 +54,20 @@ The listings you have posted you can also close those listings if you wish so an
 ![Closed-Listing](screenshots/closed-listing.png)
 You can also comment on the listings, but you have to login first to comment.
 
-9. Categories:
-Here are all the available categories which are available on this website, you can select the categories to see those particular categories.
-![Categories](screenshots/categories.png)
-#### After opening a category
-![Open](screenshots/categories2.png)
-
-10. Database tables:
+2. Database tables:
 these are the tables made inorder to create this website.
 ![Tables](screenshots/database-tables.png)
     
-***
-### Running this website
-```Bash
-python manage.py runserver
-```
-***
+#### Screenshots
+![Active-Listings](screenshots/index.png)
+![All-listings](screenshots/alllistings.png)
+![New-Listing](screenshots/new-listing.png)
+![Watchlist](screenshots/watchlist.png)
+![Closed-Listing](screenshots/closed-listing.png)
+
+#### Live Link
+[Live Link](http://architkapoor13.pythonanywhere.com/)
+
 #### Video
 [Auction](https://www.youtube.com/watch?v=zfJINDrpbqo)
 
