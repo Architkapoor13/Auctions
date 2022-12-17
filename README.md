@@ -1,9 +1,9 @@
 # Title: Auctions (An E-commerce website where the auctions happen)
 
-## 1. Mthodology 
+## 1. Methodology 
 ![Auction-Methodology](screenshots/auctions.png)
 
-## 2. Decription and features
+## 2. Description and features
 This is an E-commerce website built with **Python(Django)** as backend, **HTML**, **CSS** as Front-end and using the default sqlite database.  
 No **Javacript** was used to build this project.  
 This is an E-commerce website where you can post the things you want to sell, and you can also see/buy the things that other people have posted and can also bid on those products and the highest bidder will win the auction.  
