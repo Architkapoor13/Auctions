@@ -40,7 +40,7 @@ Here those items will appear which you decided to put on the watch by clicking t
 The items you posted appear here.
 ![My-Listings](screenshots/mylistings-page.png)
  
-#### Input/Output'
+### Input/Output'
 We can place bids on the listings on the website as input and output.
 1. Opening Listing:
 If you want to place a bid or just want to open the listing just click on the make a bid button or the name of the listing, then you will be opening the listing.
@@ -58,17 +58,17 @@ You can also comment on the listings, but you have to login first to comment.
 these are the tables made inorder to create this website.
 ![Tables](screenshots/database-tables.png)
     
-#### Screenshots
+### Screenshots
 ![Active-Listings](screenshots/index.png)
 ![All-listings](screenshots/alllistings.png)
 ![New-Listing](screenshots/new-listing.png)
 ![Watchlist](screenshots/watchlist.png)
 ![Closed-Listing](screenshots/closed-listing.png)
 
-#### Live Link
+### Live Link
 [Live Link](http://architkapoor13.pythonanywhere.com/)
 
-#### Video
+### Video
 [Auction](https://www.youtube.com/watch?v=zfJINDrpbqo)
 
 
