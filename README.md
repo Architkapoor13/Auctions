@@ -50,16 +50,16 @@ You can also comment on the listings, but you have to login first to comment.
 2. Database tables:
 these are the tables made inorder to create this website.
 ![Tables](screenshots/database-tables.png)
-    
-## 4. Screenshots
+
+## 4. Live Link
+[Live Link](http://architkapoor13.pythonanywhere.com/)
+
+## 5. Screenshots
 ![Active-Listings](screenshots/index.png)
 ![All-listings](screenshots/alllistings.png)
 ![New-Listing](screenshots/new-listing.png)
 ![Watchlist](screenshots/watchlist.png)
 ![Closed-Listing](screenshots/closed-listing.png)
-
-## 5. Live Link
-[Live Link](http://architkapoor13.pythonanywhere.com/)
 
 ## 6. Video
 [Auction](https://www.youtube.com/watch?v=zfJINDrpbqo)
