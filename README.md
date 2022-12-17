@@ -14,31 +14,24 @@ There are many features of this website as shown with the screenshots below.
 
 1. Login:
 To place a new listing or to bid upon something and to use much other features you have to login onto this website.
-![Login](screenshots/login.png)
 
 2. Register:
 In order to login to the website you have to first register on the website and make your account.
-![Register](screenshots/register.png)
    
 3. Active Listings:
 Here are the those listings listed which are currently active.
-![Active-Listings](screenshots/index.png)
    
 4. All Listings:
 Here are all the listings which were once posted onto the website which are now closed or open.
-![All-listings](screenshots/alllistings.png)
    
 5. New Listing:
 Once you have logged in to the website you can now post the item you want to sell and can set the starting bid price, and can also give the link to the display picture of the listing.
-![New-Listing](screenshots/new-listing.png)
    
 6. Watchlist:
 Here those items will appear which you decided to put on the watch by clicking the *Add to Watchlist* button.  
-![Watchlist](screenshots/watchlist.png)
    
 7. My Listings:
 The items you posted appear here.
-![My-Listings](screenshots/mylistings-page.png)
  
 ## 3. Input/Output'
 We can place bids on the listings on the website as input and output.
